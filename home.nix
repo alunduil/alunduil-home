@@ -1,7 +1,6 @@
 { pkgs, ... }:
 {
   imports = [
-    ./bin
     ./gpg.nix
     ./haskell.nix
     ./vim
