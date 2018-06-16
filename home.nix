@@ -3,6 +3,7 @@
   imports = [
     ./haskell.nix
     ./mutt.nix
+    ./vim
   ];
 
   home = {
@@ -22,17 +23,6 @@
     home-manager = {
       enable = true;
       # path = https://github.com/rycee/home-manager/archive/release-18.03.tar.gz;
-    };
-
-    vim = {
-      enable = true;
-      extraConfig = builtins.readFile ./vim/vimrc;
-      settings = {
-        background = "dark";
-        history = 1000;
-        modeline = true;
-        tabstop = 8;
-      };
     };
 
     zsh = {
