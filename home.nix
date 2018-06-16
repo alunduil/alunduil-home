@@ -3,6 +3,7 @@
   imports = [
     ./gpg.nix
     ./haskell.nix
+    ./tmux
     ./vim
     ./xresources.nix
     ./zsh

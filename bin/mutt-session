@@ -1,3 +1,0 @@
-#!bin/bash
-
-tmux has-sessin -t mutt || tmux new-session -d -s mutt -c "${HOME}"/Downloads mutt
