@@ -1,0 +1,217 @@
+" vim-plug {
+    if empty(glob('~/.vim/autoload/plug.vim'))
+      silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+      autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+    endif
+
+    call plug#begin('~/.vim/plugged')
+
+    " General Plugins
+    Plug 'airblade/vim-gitgutter'
+    Plug 'bronson/vim-trailing-whitespace'
+    Plug 'christoomey/vim-sort-motion'
+    Plug 'flazz/vim-colorschemes'
+    Plug 'vim-syntastic/syntastic'
+
+    " Haskell Plugins
+    Plug 'dag/vim2hs', { 'for': 'haskell' }
+    Plug 'lukerandall/haskellmode-vim', { 'for': 'haskell' }
+    Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
+    Plug 'Twinside/vim-hoogle', { 'for': 'haskell' }
+
+    " Idris Plugins
+    Plug 'idris-hackers/idris-vim', { 'for': 'idris' }
+
+    " JSON Plugins
+    Plug 'elzr/vim-json', { 'for': 'json' }
+
+    " Nix Plugins
+    Plug 'LnL7/vim-nix', { 'for': 'nix' }
+
+    " PureScript Plugins
+    Plug 'raichoo/purescript-vim', { 'for': 'purescript' }
+
+    " Rust Plugins
+    Plug 'rust-lang/rust.vim', { 'for': 'rust' }
+
+    call plug#end()
+" }
+
+" Basic Settings {
+    set nocompatible
+
+    " Lots of history
+    set history=1000
+
+    " Most terminals will be dark.  This can be overriden in .gvimrc
+    set background=dark
+
+    " Allow backspacing over everything in insert mode
+    set backspace=2
+
+    " Set up cpoptions
+    set cpoptions=aABceFsmq
+    "             ||||||||+-- Leave the cursor between joined lines
+    "             |||||||+-- Pause when new match is created
+    "             ||||||+-- Set options upon entering a buffer
+    "             |||||+-- :write updates the current file name
+    "             ||||+-- Automatically add <CR> to registers
+    "             |||+-- Search continues at the end of the current match
+    "             ||+-- Backslashes have no special meaning for :map
+    "             |+-- :write sets alternative file name
+    "             +-- :read sets alternative file name
+
+    " Always turn on modeline support
+    set modeline
+" }
+
+" Behavior {
+    " Load filetype indentation and plugins
+    filetype plugin indent on
+
+    " Always create backup files
+    set backup
+
+    " Backup and swap files will live in $HOME/.vim{backup,tmp}
+    set backupdir=/tmp/
+
+    " Alias the * register to the system's clipboard
+    set clipboard=unnamedplus
+
+    " Support all three formats (<CR>, <CR><LF>, and <LF><CR>) in that order
+    set fileformats=unix,dos,mac
+
+    " Be quiet
+    set noerrorbells
+
+    " Turn auto-indentation on, but be smart about it
+    set autoindent
+    set smartindent
+
+    " Turn on per-project vimrc files, but disable unsafe commands in them
+    "set exrc
+    "set secure
+" }
+
+" UI {
+    " Set colorscheme to desert
+    colorscheme solarized
+
+    " Incremental search, highlight matches
+    set hlsearch
+    set incsearch
+
+    " Show the Status Line (Airline)
+    set laststatus=2
+
+    " Always show the ruler
+    set ruler
+
+    " Avoid redrawing when possible
+    set lazyredraw
+
+    " Show matching brackets, blink them for 0.2 seconds
+    set noshowmatch
+    set matchtime=0
+
+    " Don't jump to the first non-whitespace on a line
+    set nostartofline
+
+    " Report when anything is changed via :commands
+    set report=0
+
+    " Short status messages
+    set shortmess=aOstT
+
+    " Always show the command being typed
+    set showcmd " Show the command being typed
+
+    " Scroll when 5 characters from the edge
+    set scrolloff=3
+    set sidescrolloff=5
+
+    " Set auto-complete to offer the longest possible match
+    set completeopt=longest,menuone
+" }
+
+" Text Formatting/Layout {
+    " Use UTF-8
+    set encoding=utf-8
+
+    " Automatically start comments, gq formats comments
+    set formatoptions=q
+
+    " Don't wrap lines
+    set nowrap
+
+    " Contextually be case-sensitive
+    set smartcase
+
+    " By default, real tabs should be 8 characters wide
+    set tabstop=8
+" }
+
+" Folding {
+    " Turn folding on by default
+    set foldenable
+
+    " Folding should be done by syntax generally
+    set foldmethod=syntax
+
+    " By default, let's fold everything but the top level
+    set foldlevel=3
+
+    " By default, everything can open a fold except vertical movement
+    set foldopen=block,hor,insert,jump,mark,percent,search,tag,undo,quickfix
+" }
+
+" Filetype settings {
+    autocmd BufRead,BufNewFile *mutt-*      set ft=mail
+    autocmd BufRead,BufNewFile *.nix        set ft=nix
+    autocmd BufRead,BufNewFile *.sieve      set ft=sieve
+    autocmd BufRead,BufNewFile *.sls,*.raml set ft=yaml
+
+    autocmd BufWritePost * %s/\s\+$//e
+
+    autocmd Filetype c,cpp    set shiftwidth=4 tabstop=4 foldlevel=0
+    autocmd Filetype cabal    set shiftwidth=2 tabstop=2 expandtab softtabstop=2 shiftround
+    autocmd Filetype cucumber set shiftwidth=2 tabstop=2 expandtab
+    autocmd Filetype erlang   set shiftwidth=4 tabstop=4 expandtab
+    autocmd Filetype haskell  set shiftwidth=2 tabstop=2 expandtab softtabstop=2 shiftround
+    autocmd Filetype html,xml set shiftwidth=2 tabstop=2 expandtab
+    autocmd Filetype json     set shiftwidth=4 tabstop=4 expandtab
+    autocmd Filetype nix      set shiftwidth=2 tabstop=2 expandtab
+    autocmd Filetype php      set shiftwidth=4 tabstop=4 expandtab
+    autocmd Filetype python   set shiftwidth=4 tabstop=4 expandtab
+    autocmd Filetype rst      set shiftwidth=4 tabstop=4 expandtab
+    autocmd Filetype ruby     set shiftwidth=2 tabstop=2 expandtab
+    autocmd Filetype sieve    set shiftwidth=2 tabstop=2 expandtab
+    autocmd Filetype yaml     set shiftwidth=2 tabstop=2 expandtab
+    autocmd Filetype zsh      set shiftwidth=2 tabstop=2
+" }
+
+" Overrides {
+    " These get put at the end of vimrc to guarantee it always takes effect
+    " Make sure syntax highlighting is always enabled
+    syntax on
+
+    "  Set the column count warning to something easier on the eyes
+    hi ColorColumn ctermbg=DarkBlue
+" }
+
+" Syntastic {
+    set statusline+=%#warningmsg#
+    set statusline+=%{SyntasticStatuslineFlag()}
+    set statusline+=%*
+
+    let g:syntastic_check_on_wq = 0
+    let g:syntastic_aggregate_errors = 1
+    let g:syntastic_cursor_columns = 0
+    let g:syntastic_always_populate_loc_list = 1
+    let g:syntastic_auto_loc_list = 1
+    let g:syntastic_loc_list_height = 5
+" }
+
+" Haskell Mode {
+    let g:haddock_browser="/home/alunduil/.nix-profile/bin/chromium-browser"
+" }
