@@ -22,6 +22,6 @@
     "zshrc" = {
       source = ./zshrc;
       target = ".zshrc";
-    }
+    };
   };
 }
