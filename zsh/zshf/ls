@@ -1,0 +1,7 @@
+emulate -L zsh
+
+local LS
+LS=(ls -F)
+
+[[ -n ${LS_COLORS} ]] && LS=(ls --color=auto)
+command ${LS} $*

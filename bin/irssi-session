@@ -1,0 +1,3 @@
+#!/bin/bash
+
+tmux has-session -t irssi || tmux new -d -s irssi irssi

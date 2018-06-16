@@ -1,16 +1,21 @@
 { pkgs, ... }:
 {
   imports = [
+    ./bin
     ./gpg.nix
     ./haskell.nix
-    ./home-manager.nix
-    ./mutt.nix
     ./vim
     ./xresources.nix
     ./zsh
   ];
 
   home = {
+    file."bin" = {
+      recursive = true;
+      source = ./bin;
+      target = ".bin";
+    };
+
     packages = [
       pkgs.file
       pkgs.irssi
@@ -21,5 +26,10 @@
     sessionVariables = {
       EDITOR = "vim";
     };
+  };
+
+  programs.home-manager = {
+    enable = true;
+    path = https://github.com/rycee/home-manager/archive/release-18.03.tar.gz;
   };
 }

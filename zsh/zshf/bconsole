@@ -1,0 +1,19 @@
+emulate -L zsh
+
+ssh -N -i ${HOME}/.ssh/id_rsa -L 19101:localhost:9101 mycroft.alunduil.com &
+TUNNEL_PID_19101=${!}
+
+ssh -N -i ${HOME}/.ssh/id_rsa -R 19102:localhost:9102 mycroft.alunduil.com &
+TUNNEL_PID_19102=${!}
+
+local BCONSOLE
+BCONSOLE=(sudo bconsole -c /etc/bacula/bconsole.conf)
+command ${BCONSOLE} $*
+
+if [ ${?} -gt 0 ]; then
+	echo "trying again …"
+	command ${BCONSOLE} $*
+fi
+
+kill ${TUNNEL_PID_19101}
+kill ${TUNNEL_PID_19102}

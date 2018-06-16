@@ -1,0 +1,22 @@
+emulate -L zsh
+
+local MUTT
+MUTT=(mutt)
+
+if [ ${#} -le 0 ]; then
+	local SESSION_NAME
+	SESSION_NAME="mutt"
+
+	local DIR
+	DIR="${HOME}"/Downloads
+
+	if tmux has-session -t "${SESSION_NAME}"; then
+		tmux detach-client -s "${SESSION_NAME}"
+	else
+		tmux new-session -d -c "${DIR}" -s "${SESSION_NAME}" "command mutt"
+	fi
+
+	MUTT=(tmux switch-client -t "${SESSION_NAME}")
+fi
+
+command ${MUTT} $*

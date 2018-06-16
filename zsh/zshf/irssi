@@ -1,0 +1,15 @@
+emulate -L zsh
+
+local SESSION_NAME
+SESSION_NAME="irssi"
+
+if tmux has-session -t "${SESSION_NAME}"; then
+	tmux detach-client -s "${SESSION_NAME}"
+else
+	tmux new-session -d -s "${SESSION_NAME}" "command irssi"
+fi
+
+local IRSSI
+IRSSI=(tmux switch-client -t "${SESSION_NAME}")
+
+command ${IRSSI} $*
