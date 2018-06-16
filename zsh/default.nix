@@ -16,7 +16,7 @@
           sha256 = "1jfq66yy0swhjjwvigdy7n2hidpxf2flyglyw9jdm6z5fq1sjs3b";
         } + "/app-shells/zsh/files/prompt_gentoo_setup-1"
       );
-      target = ".zshf/prompt_gentoo_setup-1";
+      target = ".zshf/prompt_gentoo_setup";
     };
 
     "zshrc" = {
