@@ -1,32 +1,23 @@
 { pkgs, ... }:
 {
   home = {
-    let myHaskellPackages =
-          haskellPackages:
-
-          with haskellPackages;
-          [
-            cabal-install
-            hindent
-            hlint
-          ];
-    in packages = [
-         pkgs.haskellPackages.ghcWithHoogle myHaskellPackages
-
-         pkgs.cabal2nix
-         pkgs.cfssl
-         pkgs.dos2unix
-         pkgs.file
-         pkgs.irssi
-         pkgs.lynx
-         pkgs.mutt
-         pkgs.mypy
-         pkgs.nixops
-         pkgs.screen
-         pkgs.tig
-         pkgs.travis
-         pkgs.urlview
-      ];
+    packages = [
+      pkgs.cabal2nix
+      pkgs.cabal-install
+      pkgs.cfssl
+      pkgs.dos2unix
+      pkgs.file
+      pkgs.irssi
+      pkgs.lynx
+      pkgs.mutt
+      pkgs.myHaskellPackages
+      pkgs.mypy
+      pkgs.nixops
+      pkgs.screen
+      pkgs.tig
+      pkgs.travis
+      pkgs.urlview
+    ];
 
     sessionVariables = {
       EDITOR = "vim";
