@@ -1,32 +1,27 @@
 { pkgs, ... }:
 {
+  imports = [
+    ./gpg.nix
+    ./haskell.nix
+    ./tmux
+    ./vim
+    ./xresources.nix
+    ./zsh
+  ];
+
   home = {
-    let myHaskellPackages =
-          haskellPackages:
+    file."bin" = {
+      recursive = true;
+      source = ./bin;
+      target = ".bin";
+    };
 
-          with haskellPackages;
-          [
-            cabal-install
-            hindent
-            hlint
-          ];
-    in packages = [
-         pkgs.haskellPackages.ghcWithHoogle myHaskellPackages
-
-         pkgs.cabal2nix
-         pkgs.cfssl
-         pkgs.dos2unix
-         pkgs.file
-         pkgs.irssi
-         pkgs.lynx
-         pkgs.mutt
-         pkgs.mypy
-         pkgs.nixops
-         pkgs.screen
-         pkgs.tig
-         pkgs.travis
-         pkgs.urlview
-      ];
+    packages = [
+      pkgs.file
+      pkgs.irssi
+      pkgs.nixops
+      pkgs.tig
+    ];
 
     sessionVariables = {
       EDITOR = "vim";
@@ -36,10 +31,5 @@
   programs.home-manager = {
     enable = true;
     path = https://github.com/rycee/home-manager/archive/release-18.03.tar.gz;
-  };
-
-  services.gpg-agent = {
-    enable = true;
-    enableSshSupport = true;
   };
 }

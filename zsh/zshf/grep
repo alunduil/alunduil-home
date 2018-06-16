@@ -1,0 +1,7 @@
+emulate -L zsh
+
+local GREP
+GREP=(grep)
+
+[[ -n ${LS_COLORS} ]] && GREP=(grep --color=auto)
+command ${GREP} $*
