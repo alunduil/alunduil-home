@@ -10,10 +10,10 @@
       } + "/Xresources.dark"
     );
     properties = {
-      "URxvt.font" = "xft:DejaVu Sans Mono:size=6.5:antialias=true";
-      "URxvt.boldFont" = "xft:DejaVu Sans Mono-Bold:size=6.5:antialias=true";
-      "URxvt.italicFont" = "xft:DejaVu Sans Mono-Oblique:size=6.5:antialias=true";
-      "URxvt.boldItalicFont" = "xft:DejaVu Sans Mono-BoldOblique:size=6.5:antialias=true";
+      "URxvt.font" = "xft:DejaVu Sans Mono:size=6.0:antialias=true";
+      "URxvt.boldFont" = "xft:DejaVu Sans Mono-Bold:size=6.0:antialias=true";
+      "URxvt.italicFont" = "xft:DejaVu Sans Mono-Oblique:size=6.0:antialias=true";
+      "URxvt.boldItalicFont" = "xft:DejaVu Sans Mono-BoldOblique:size=6.0:antialias=true";
 
       "URxvt.geometry" = "140x40";
       "URxvt.letterSpace" = 1;
