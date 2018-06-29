@@ -74,7 +74,7 @@ fi
 
 . "${HOME}/.nix-profile/etc/profile.d/hm-session-vars.sh"
 
-[[ -e "${HOME}/.zshrc.local" ]] && . "${HOME}/.zshrc.local
+[[ -e "${HOME}/.zshrc.local" ]] && . "${HOME}/.zshrc.local"
 
 [[ $- != *i* ]] && return
 [[ -z "${TMUX}" ]] && exec tmux new-session -A -s default
