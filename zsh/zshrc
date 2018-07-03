@@ -59,10 +59,6 @@ export KEYTIMEOUT=1
 
 export CLOUDSDK_PYTHON=$(whence python2)
 
-export PORTAGE_GPG_KEY="0x2654CADE11A8217C!"
-export ECHANGELOG_USER="Alex Brandt <alunduil@gentoo.org>"
-
-export NIX_REMOTE=daemon
 unset NIX_BUILD_SHELL
 
 if [ -e "${HOME}/.nix-profile/bin/ghc" ]; then
