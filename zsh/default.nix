@@ -18,10 +18,19 @@
       );
       target = ".zshf/prompt_gentoo_setup";
     };
+  };
 
-    "zshrc" = {
-      source = ./zshrc;
-      target = ".zshrc";
+  programs.zsh = {
+    enable = true;
+    history = {
+      extended = true;
+      share = false;
+    };
+    initExtra = builtins.readFile ./zshrc;
+    sessionVariables = {
+      SSH_AUTH_SOCK = "/run/user/$(id -u)/gnupg/S.gpg-agent.ssh";
+      KEYTIMEOUT = 1;
+      CLOUDSDK_PYTHON = "$(whence python2)";
     };
   };
 }
