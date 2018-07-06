@@ -1,43 +1,28 @@
-typeset -U path
-path=($path ${HOME}/google-cloud-sdk/bin ${HOME}/.bin)
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_IGNORE_SPACE
+setopt HIST_NO_FUNCTIONS
+setopt HIST_NO_STORE
+setopt HIST_REDUCE_BLANKS
+unsetopt INC_APPEND_HISTORY
+unsetopt INC_APPEND_HISTORY_TIME
 
-typeset -U fpath
-fpath=($fpath ${HOME}/.zshf)
+setopt AUTO_PUSHD
+setopt PUSHD_IGNORE_DUPS
+
+setopt EXTENDED_GLOB
+
+fpath+=(${HOME}/.zshf)
 autoload -U ${HOME}/.zshf/*(:t)
 
-HISTFILE=~/.histfile
-HISTSIZE=10000
-SAVEHIST=${HISTSIZE}
-
-setopt no_inc_append_history
-setopt no_inc_append_history_time
-setopt no_share_history
-
-setopt extended_history
-setopt hist_ignore_all_dups
-setopt hist_reduce_blanks
-setopt hist_ignore_space
-setopt hist_no_store
-setopt hist_no_functions
-
-setopt extended_glob
-
-setopt pushd_ignore_dups
-setopt auto_pushd
-
-eval $(dircolors)
-
-autoload -Uz promptinit
-promptinit
+setopt PROMPT_SUBST
+autoload -U promptinit && promptinit
 prompt gentoo
 
-setopt complete_in_word
-autoload -Uz compinit
-compinit
+setopt COMPLETE_IN_WORD
+eval $(dircolors)
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
-setopt prompt_subst
-autoload -Uz vcs_info
+autoload -U vcs_info
 zstyle ':vcs_info:*' actionformats '%F{5}(%f%s%F{5})%F{3}-%F{5}[%F{2}%b%F{3}|%F{1}%a%F{5}]%f '
 zstyle ':vcs_info:*' formats       '%F{5}(%f%s%F{5})%F{3}-%F{5}[%F{2}%b%F{5}]%f '
 zstyle ':vcs_info:(sv[nk]|bzr):*' branchformat '%b%F{1}:%F{3}%r'
@@ -51,14 +36,6 @@ vcs_info_wrapper() {
 
 RPROMPT=$'$(vcs_info_wrapper)'
 
-[[ -n "${DISPLAY}" ]] && xhost +local:docker >/dev/null 2>&1
-
-export SSH_AUTH_SOCK=/run/user/1000/gnupg/S.gpg-agent.ssh
-
-export KEYTIMEOUT=1
-
-export CLOUDSDK_PYTHON=$(whence python2)
-
 unset NIX_BUILD_SHELL
 
 if [ -e "${HOME}/.nix-profile/bin/ghc" ]; then
@@ -68,9 +45,9 @@ if [ -e "${HOME}/.nix-profile/bin/ghc" ]; then
 	export NIX_GHC_LIBDIR="${HOME}/.nix-profile/lib/ghc-$(${NIX_GHC} --numeric-version)"
 fi
 
-. "${HOME}/.nix-profile/etc/profile.d/hm-session-vars.sh"
-
 [[ -e "${HOME}/.zshrc.local" ]] && . "${HOME}/.zshrc.local"
+
+path+=(${HOME}/google-cloud-sdk/bin ${HOME}/.bin)
 
 [[ $- != *i* ]] && return
 [[ -z "${TMUX}" ]] && exec tmux new-session -A -s default
