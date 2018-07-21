@@ -7,11 +7,17 @@
     call plug#begin('~/.vim/plugged')
 
     " General Plugins
-    Plug 'airblade/vim-gitgutter'
     Plug 'bronson/vim-trailing-whitespace'
     Plug 'christoomey/vim-sort-motion'
     Plug 'flazz/vim-colorschemes'
+    Plug 'mhinz/vim-signify'
     Plug 'vim-syntastic/syntastic'
+
+    " Erlang Plugins
+    Plug 'vim-erlang/vim-dialyzer', { 'for': 'erlang' }
+    Plug 'vim-erlang/vim-erlang-compiler', { 'for': 'erlang' }
+    Plug 'vim-erlang/vim-erlang-runtime', { 'for': 'erlang' }
+    Plug 'vim-erlang/vim-rebar', { 'for': 'erlang' }
 
     " Haskell Plugins
     Plug 'dag/vim2hs', { 'for': 'haskell' }
@@ -33,6 +39,9 @@
 
     " Rust Plugins
     Plug 'rust-lang/rust.vim', { 'for': 'rust' }
+
+    " Thrift Plugins
+    Plug 'solarnz/thrift.vim', { 'for': 'thrift' }
 
     call plug#end()
 " }
