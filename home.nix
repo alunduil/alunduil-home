@@ -1,6 +1,8 @@
 { pkgs, ... }:
 {
   imports = [
+    ./direnv.nix
+    ./erlang.nix
     ./gpg.nix
     ./haskell.nix
     ./htop.nix
