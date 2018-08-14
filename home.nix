@@ -25,6 +25,7 @@
       pkgs.irssi
       pkgs.nixops
       pkgs.rebar3
+      pkgs.shellcheck
       pkgs.tig
     ];
 
