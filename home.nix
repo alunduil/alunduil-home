@@ -6,6 +6,7 @@
     ./gpg.nix
     ./haskell.nix
     ./htop.nix
+    ./python.nix
     ./rust.nix
     ./tmux
     ./vim
