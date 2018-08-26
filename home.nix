@@ -23,6 +23,7 @@
 
     packages = [
       pkgs.file
+      pkgs.gcc
       pkgs.gnumake
       pkgs.irssi
       pkgs.nixops
