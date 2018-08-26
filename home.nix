@@ -22,6 +22,7 @@
 
     packages = [
       pkgs.file
+      pkgs.gnumake
       pkgs.irssi
       pkgs.nixops
       pkgs.rebar3
