@@ -9,8 +9,10 @@
     " General Plugins
     Plug 'bronson/vim-trailing-whitespace'
     Plug 'christoomey/vim-sort-motion'
+    Plug 'farmergreg/vim-lastplace'
     Plug 'flazz/vim-colorschemes'
     Plug 'mhinz/vim-signify'
+    Plug 'vim-airline/vim-airline'
     Plug 'vim-syntastic/syntastic'
 
     " Erlang Plugins
@@ -206,6 +208,13 @@
 
     "  Set the column count warning to something easier on the eyes
     hi ColorColumn ctermbg=DarkBlue
+" }
+
+" Airline {
+    " Enable plugin extensions for airline so it will display plugin specific
+    " information.
+
+    let g:airline#extensions#syntastic#enabled = 1
 " }
 
 " Syntastic {
