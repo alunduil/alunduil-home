@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 {
   imports = [
     ./direnv.nix
@@ -44,6 +44,7 @@
 
   systemd.user = {
     services = {
+      /* TODO
       "home-manager-switch" = {
         Unit = {
           Description = "home-manager switch";
@@ -52,8 +53,10 @@
 
         Service = {
           ExecStart = "home-manager switch";
+          Environment = "PATH=${pkgs.nix}/bin";
         };
       };
+      */
 
       "nix-env-update" = {
         Unit = {
@@ -68,6 +71,7 @@
     };
 
     timers = {
+      /* TODO
       "home-manager-switch" = {
         Timer = {
           OnCalendar = "daily";
@@ -77,6 +81,7 @@
           WantedBy = [ "timers.target" ];
         };
       };
+      */
 
       "nix-env-update" = {
         Timer = {
@@ -88,5 +93,11 @@
         };
       };
     };
+  };
+
+  xdg.configFile."user-tmpfiles.d" = {
+    recursive = true;
+    source = ./user-tmpfiles.d;
+    target = "user-tmpfiles.d";
   };
 }
