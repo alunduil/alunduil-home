@@ -9,6 +9,7 @@
     ./python.nix
     ./rust.nix
     ./tmux
+    ./tmpfiles
     ./vim
     ./xresources.nix
     ./zsh
@@ -92,11 +93,5 @@
         };
       };
     };
-  };
-
-  xdg.configFile."user-tmpfiles.d" = {
-    recursive = true;
-    source = ./user-tmpfiles.d;
-    target = "user-tmpfiles.d";
   };
 }
