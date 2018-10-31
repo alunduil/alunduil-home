@@ -13,7 +13,7 @@
     Plug 'flazz/vim-colorschemes'
     Plug 'mhinz/vim-signify'
     Plug 'vim-airline/vim-airline'
-    Plug 'vim-syntastic/syntastic'
+    Plug 'w0rp/ale'
 
     " Erlang Plugins
     Plug 'vim-erlang/vim-dialyzer', { 'for': 'erlang' }
@@ -214,20 +214,12 @@
     " Enable plugin extensions for airline so it will display plugin specific
     " information.
 
-    let g:airline#extensions#syntastic#enabled = 1
+    let g:airline#extensions#ale#enabled = 1
 " }
 
-" Syntastic {
-    set statusline+=%#warningmsg#
-    set statusline+=%{SyntasticStatuslineFlag()}
-    set statusline+=%*
-
-    let g:syntastic_check_on_wq = 0
-    let g:syntastic_aggregate_errors = 1
-    let g:syntastic_cursor_columns = 0
-    let g:syntastic_always_populate_loc_list = 1
-    let g:syntastic_auto_loc_list = 1
-    let g:syntastic_loc_list_height = 5
+" Ale {
+    noremap <leader>nerr <Plug>(ale_next_wrap)
+    noremap <leader>perr <Plug>(ale_previous_wrap)
 " }
 
 " Haskell Mode {
