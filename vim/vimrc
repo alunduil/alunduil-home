@@ -42,6 +42,9 @@
     " Rust Plugins
     Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 
+    " systemd Plugins
+    Plug 'Matt-Deacalion/vim-systemd-syntax'
+
     " Thrift Plugins
     Plug 'solarnz/thrift.vim', { 'for': 'thrift' }
 
