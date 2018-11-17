@@ -10,8 +10,8 @@
       } + "/Xresources.dark"
     );
     properties = {
-      "URxvt.font" = "xft:NotoSansMono:style=Regular:pixelsize=8:antialias=true";
-      "URxvt.boldFont" = "xft:NotoSansMono:style=Bold:pixelsize=8:antialias=true";
+      "URxvt.font" = "xft:NotoSansMono:style=Regular:pixelsize=7:antialias=true";
+      "URxvt.boldFont" = "xft:NotoSansMono:style=Bold:pixelsize=7:antialias=true";
 
       "URxvt.geometry" = "140x40";
       "URxvt.letterSpace" = 1;
