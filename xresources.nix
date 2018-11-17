@@ -10,6 +10,12 @@
       } + "/Xresources.dark"
     );
     properties = {
+      "Xft.dpi" = 96;
+      "Xft.antialias" = true;
+      "Xft.rgba" = "rgb";
+      "Xft.hinting" = true;
+      "Xft.hintstyle" = "hintslight";
+
       "URxvt.font" = "xft:NotoSansMono:style=Regular:pixelsize=7:antialias=true";
       "URxvt.boldFont" = "xft:NotoSansMono:style=Bold:pixelsize=7:antialias=true";
 
