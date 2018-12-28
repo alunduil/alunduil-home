@@ -1,19 +1,10 @@
 { pkgs, config, ... }:
 {
   imports = [
-    ./direnv.nix
-    ./erlang.nix
-    ./gpg.nix
-    ./haskell.nix
-    ./jq.nix
-    ./htop.nix
-    ./python.nix
-    ./rust.nix
-    ./tmux
+    ./languages
+    ./programs
     ./tmpfiles
-    ./vim
     ./xresources.nix
-    ./zsh
   ];
 
   home = {
