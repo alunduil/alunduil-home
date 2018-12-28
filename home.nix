@@ -5,6 +5,7 @@
     ./erlang.nix
     ./gpg.nix
     ./haskell.nix
+    ./jq.nix
     ./htop.nix
     ./python.nix
     ./rust.nix
