@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+LATEST_VERSION="$(git tag -l | sort -V | tail -n 1)"
+git log --format=oneline --no-merges "${LATEST_VERSION}"..HEAD
