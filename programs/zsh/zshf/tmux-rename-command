@@ -1,0 +1,9 @@
+emulate -L zsh
+
+if [ "$(ps -p $(ps -p $$ -o ppid=) -o comm= | cut -d : -f 1)" = "tmux" ]; then
+	window=$(current-tmux-window)
+	trap "tmux set-window-option -t $window automatic-rename on 1>/dev/null" EXIT
+	tmux rename-window "$(shorten-hostname $*)"
+fi
+
+command "$@"

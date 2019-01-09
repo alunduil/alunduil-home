@@ -1,0 +1,3 @@
+emulate -L zsh
+
+tmux list-windows | awk -F : '/\(active\)$/ { print $1 }'
