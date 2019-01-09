@@ -1,0 +1,8 @@
+emulate -L zsh
+
+local host="${*##* }"
+if echo $host | grep -P "^([0-9]+\.){3}[0-9]+" -q; then
+	echo $host
+else
+	echo ${host%%.*}
+fi

@@ -1,0 +1,6 @@
+emulate -L zsh
+
+local SSH
+SSH=(ssh)
+
+tmux-rename-command ${SSH} $*
