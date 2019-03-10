@@ -1,7 +1,6 @@
 { ... }:
 {
   imports = [
-    ./alacritty
     ./gpg.nix
     ./htop.nix
     ./tmux
