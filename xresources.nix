@@ -10,7 +10,6 @@
       } + "/Xresources.dark"
     );
     properties = {
-      "Xft.dpi" = 96;
       "Xft.antialias" = true;
       "Xft.rgba" = "rgb";
       "Xft.hinting" = true;
