@@ -15,8 +15,8 @@
       "Xft.hinting" = true;
       "Xft.hintstyle" = "hintslight";
 
-      "URxvt.font" = "xft:NotoSansMono:style=Regular:pixelsize=7:antialias=true";
-      "URxvt.boldFont" = "xft:NotoSansMono:style=Bold:pixelsize=7:antialias=true";
+      "URxvt.font" = "xft:NotoSansMono:style=Regular:pixelsize=21:antialias=true";
+      "URxvt.boldFont" = "xft:NotoSansMono:style=Bold:pixelsize=21:antialias=true";
 
       "URxvt.geometry" = "140x40";
       "URxvt.letterSpace" = 1;
