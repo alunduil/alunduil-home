@@ -1,6 +1,7 @@
 { pkgs, config, ... }:
 {
   imports = [
+    ./cursor.nix
     ./languages
     ./programs
     ./tmpfiles
