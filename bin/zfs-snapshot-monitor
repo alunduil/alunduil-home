@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+trap restore_window INT
+
+function restore_window() {
+	setw automatic-rename
+}
+
+tmux rename-window "ZFS Snapshot Monitor $1"
+tmux send-keys "watch -n .3 \"zfs list -t snapshot -r odin-boot/ROOT/$1 | head -n 65\"" Enter
+tmux split-window -h
+tmux select-pane -t 1
+tmux send-keys "watch -n .3 \"zfs list -t snapshot -r odin-boot/ROOT/$1 | tail -n +65\"" Enter
+tmux split-window -v
+tmux select-pane -t 2
+tmux send-keys "sudo nix-env --list-generations -p /nix/var/nix/profiles/system | awk '{print \$2}' | sed -e 's/-[0-9][0-9]$//' | sort | uniq -c" Enter
+tmux split-window -h
+tmux select-pane -t 3
+tmux send-keys "watch -n .3 df -h" Enter
+tmux select-pane -t 2
