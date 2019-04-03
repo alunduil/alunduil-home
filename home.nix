@@ -21,6 +21,7 @@
       pkgs.gnumake
       pkgs.irssi
       pkgs.nixops
+      pkgs.pijul
       pkgs.shellcheck
       pkgs.tig
     ];
