@@ -1,6 +1,7 @@
 { ... }:
 {
   imports = [
+    ./direnv.nix
     ./gpg.nix
     ./htop.nix
     ./tmux
@@ -8,8 +9,5 @@
     ./zsh
   ];
 
-  programs = {
-    direnv.enable = true;
-    jq.enable = true;
-  };
+  programs.jq.enable = true;
 }
