@@ -1,4 +1,6 @@
 {
+  allowUnfree = true;
+
   packageOverrides =
     super:
 
