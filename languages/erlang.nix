@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   home.packages = [
-    pkgs.erlang
+    pkgs.erlangR21
     pkgs.rebar3
   ];
 }
