@@ -223,6 +223,13 @@
 " Ale {
     noremap <leader>nerr <Plug>(ale_next_wrap)
     noremap <leader>perr <Plug>(ale_previous_wrap)
+
+    let g:ale_fix_on_save = 1
+    let g:ale_fixers = {
+			    \ '*': ['remove_trailing_lines', 'trim_whitespace'],
+			    \ 'haskell': ['brittany'],
+			    \ 'python': ['isort', 'black'],
+			    \}
 " }
 
 " Haskell Mode {
