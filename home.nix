@@ -5,7 +5,6 @@
     ./languages
     ./programs
     ./tmpfiles
-    ./xresources.nix
   ];
 
   home = {
