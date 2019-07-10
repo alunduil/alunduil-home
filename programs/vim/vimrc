@@ -15,6 +15,9 @@
     Plug 'vim-airline/vim-airline'
     Plug 'w0rp/ale'
 
+    " DHall Plugins
+    Plug 'vmchale/dhall-vim', { 'for': 'dhall' }
+
     " Erlang Plugins
     Plug 'vim-erlang/vim-dialyzer', { 'for': 'erlang' }
     Plug 'vim-erlang/vim-erlang-compiler', { 'for': 'erlang' }
@@ -180,6 +183,7 @@
 " }
 
 " Filetype settings {
+    autocmd BufRead,BufNewFile *.dhall      set ft=dhall
     autocmd BufRead,BufNewFile *mutt-*      set ft=mail
     autocmd BufRead,BufNewFile *.nix        set ft=nix
     autocmd BufRead,BufNewFile *.sieve      set ft=sieve
@@ -187,8 +191,8 @@
 
     autocmd BufWritePost * %s/\s\+$//e
 
-    autocmd Filetype c,cpp    set shiftwidth=4 tabstop=4 foldlevel=0
     autocmd Filetype cabal    set shiftwidth=2 tabstop=2 expandtab softtabstop=2 shiftround
+    autocmd Filetype c,cpp    set shiftwidth=4 tabstop=4 foldlevel=0
     autocmd Filetype cucumber set shiftwidth=2 tabstop=2 expandtab
     autocmd Filetype erlang   set shiftwidth=4 tabstop=4 expandtab
     autocmd Filetype haskell  set shiftwidth=2 tabstop=2 expandtab softtabstop=2 shiftround
