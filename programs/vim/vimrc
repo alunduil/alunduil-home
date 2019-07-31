@@ -194,7 +194,7 @@
     autocmd Filetype cabal    set shiftwidth=2 tabstop=2 expandtab softtabstop=2 shiftround
     autocmd Filetype c,cpp    set shiftwidth=4 tabstop=4 foldlevel=0
     autocmd Filetype cucumber set shiftwidth=2 tabstop=2 expandtab
-    autocmd Filetype erlang   set shiftwidth=4 tabstop=4 expandtab
+    autocmd Filetype erlang   set shiftwidth=2 tabstop=2 expandtab softtabstop=2 shiftround
     autocmd Filetype haskell  set shiftwidth=2 tabstop=2 expandtab softtabstop=2 shiftround
     autocmd Filetype html,xml set shiftwidth=2 tabstop=2 expandtab
     autocmd Filetype json     set shiftwidth=4 tabstop=4 expandtab
@@ -204,6 +204,7 @@
     autocmd Filetype rst      set shiftwidth=4 tabstop=4 expandtab
     autocmd Filetype ruby     set shiftwidth=2 tabstop=2 expandtab
     autocmd Filetype sieve    set shiftwidth=2 tabstop=2 expandtab
+    autocmd Filetype thrift   set shiftwidth=2 tabstop=2 expandtab
     autocmd Filetype yaml     set shiftwidth=2 tabstop=2 expandtab
     autocmd Filetype zsh      set shiftwidth=2 tabstop=2
 " }
