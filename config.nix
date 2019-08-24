@@ -1,5 +1,6 @@
 {
   allowUnfree = true;
+  allowBroken = true;
 
   packageOverrides =
     super:
