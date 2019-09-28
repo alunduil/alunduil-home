@@ -9,7 +9,7 @@
     pkgs.haskellPackages.haskell-lsp-types
     pkgs.haskellPackages.hpack
     #pkgs.haskellPackages.hpack-convert
-    pkgs.haskellPackages.hpack-dhall
+    #pkgs.haskellPackages.hpack-dhall
     pkgs.myHaskellPackages # from config.nix
   ];
 }
