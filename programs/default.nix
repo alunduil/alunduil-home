@@ -1,7 +1,7 @@
 { ... }:
 {
   imports = [
-    ./alacritty
+    ./alacritty.nix
     ./direnv.nix
     ./gpg.nix
     ./htop.nix
