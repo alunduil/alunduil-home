@@ -9,6 +9,12 @@
   ];
 
   home.packages = [
+    pkgs.cfssl
+    pkgs.gcc
+    pkgs.gnumake
+    pkgs.pijul
+    pkgs.shellcheck
+    pkgs.tig
     pkgs.travis
   ];
 }

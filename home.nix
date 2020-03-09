@@ -29,13 +29,8 @@
 
     packages = [
       pkgs.file
-      pkgs.gcc
-      pkgs.gnumake
       pkgs.irssi
       pkgs.nixops
-      pkgs.pijul
-      pkgs.shellcheck
-      pkgs.tig
     ];
 
     sessionVariables = {
