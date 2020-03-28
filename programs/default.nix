@@ -7,6 +7,7 @@
     ./htop.nix
     ./tmux
     ./vim
+    ./xmonad
     ./zsh
   ];
 
