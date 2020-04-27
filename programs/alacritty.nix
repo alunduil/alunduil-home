@@ -11,7 +11,6 @@
         dynamic_padding = true;
       };
       scrolling.history = 0;
-      tabspaces = 4;
       font = {
         normal.family = "Noto Sans Mono";
         size = 5.0;
