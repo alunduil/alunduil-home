@@ -39,61 +39,19 @@
     };
   };
 
-  programs.home-manager = {
-    enable = true;
-    path = https://github.com/rycee/home-manager/archive/release-19.09.tar.gz;
-  };
-
   systemd.user = {
-    services = {
-      /* TODO
-      "home-manager-switch" = {
-        Unit = {
-          Description = "home-manager switch";
-          Documentation = "https://rycee.gitlab.io/home-manager/options.html";
-        };
-
-        Service = {
-          ExecStart = "home-manager switch";
-          Environment = "PATH=${pkgs.nix}/bin";
-        };
+    services."nix-env-update" = {
+      Unit = {
+        Description = "nix-env -u";
+        Documentation = "man:nix-env(1)";
       };
-      */
 
-      "nix-env-update" = {
-        Unit = {
-          Description = "nix-env -u";
-          Documentation = "man:nix-env(1)";
-        };
-
-        Service = {
-          ExecStart = "${pkgs.nix}/bin/nix-env -u";
-        };
-      };
+      Service.ExecStart = "${pkgs.nix}/bin/nix-env -u";
     };
 
-    timers = {
-      /* TODO
-      "home-manager-switch" = {
-        Timer = {
-          OnCalendar = "daily";
-        };
-
-        Install = {
-          WantedBy = [ "timers.target" ];
-        };
-      };
-      */
-
-      "nix-env-update" = {
-        Timer = {
-          OnCalendar = "daily";
-        };
-
-        Install = {
-          WantedBy = [ "timers.target" ];
-        };
-      };
+    timers."nix-env-update" = {
+      Timer.OnCalendar = "daily";
+      Install.WantedBy = [ "timers.target" ];
     };
   };
 }
