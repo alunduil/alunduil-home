@@ -2,6 +2,7 @@
 {
   imports = [
     ./alacritty.nix
+    ./bashtop
     ./direnv.nix
     ./gpg.nix
     ./htop.nix
