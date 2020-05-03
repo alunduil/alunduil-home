@@ -16,9 +16,7 @@
         Documentation = "man:gpg(1)";
       };
 
-      Service = {
-        ExecStart = "${pkgs.gnupg}/bin/gpg2 --refresh-keys";
-      };
+      Service.ExecStart = "${pkgs.gnupg}/bin/gpg2 --refresh-keys";
     };
 
     timers."gpg-refresh-keys" = {
@@ -27,13 +25,8 @@
         Documentation = "man:gpg(1)";
       };
 
-      Timer = {
-        OnCalendar = "daily";
-      };
-
-      Install = {
-        WantedBy = [ "timers.target" ];
-      };
+      Timer.OnCalendar = "daily";
+      Install.WantedBy = [ "timers.target" ];
     };
   };
 }

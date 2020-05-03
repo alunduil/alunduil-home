@@ -13,7 +13,7 @@
       scrolling.history = 0;
       font = {
         normal.family = "Noto Sans Mono";
-        size = 5.0;
+        size = 4.5;
       };
       colors = {
         primary = {
