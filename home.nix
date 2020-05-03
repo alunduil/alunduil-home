@@ -31,6 +31,7 @@
       pkgs.file
       pkgs.irssi
       pkgs.nixops
+      pkgs.skaffold
     ];
 
     sessionVariables = {
