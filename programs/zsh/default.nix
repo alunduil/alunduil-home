@@ -12,7 +12,7 @@
         pkgs.fetchFromGitHub {
           owner = "gentoo";
           repo = "gentoo";
-          rev = "d09566dc69f7806142d67955f8d05383d60d0622";
+          rev = "8e82b49474c55d7a0d277d3d522fd490c151f7b8";
           sha256 = "1jfq66yy0swhjjwvigdy7n2hidpxf2flyglyw9jdm6z5fq1sjs3b";
         } + "/app-shells/zsh/files/prompt_gentoo_setup-1"
       );

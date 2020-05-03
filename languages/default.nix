@@ -6,6 +6,7 @@
     ./haskell.nix
     ./python.nix
     ./rust.nix
+    ./shell.nix
   ];
 
   home.packages = [
@@ -13,7 +14,7 @@
     pkgs.gcc
     pkgs.gnumake
     pkgs.pijul
-    pkgs.shellcheck
+    pkgs.skaffold
     pkgs.tig
     pkgs.travis
   ];
