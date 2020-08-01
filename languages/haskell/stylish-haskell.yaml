@@ -1,0 +1,50 @@
+# The stylish-haskell tool is mainly configured by specifying steps. These steps
+# are a list, so they have an order, and one specific step may appear more than
+# once (if needed). Each file is processed by these steps in the given order.
+steps:
+  - records: {}
+
+  - simple_align:
+      cases: false
+      top_level_patterns: false
+      records: false
+
+  - imports:
+      align: none
+      list_align: new_line
+      pad_module_names: false
+      long_list_align: multiline
+      empty_list_align: right_after
+      list_padding: 2
+
+  - language_pragmas:
+      # We can generate different styles of language pragma lists.
+      #
+      # - vertical: Vertical-spaced language pragmas, one per line.
+      #
+      # - compact: A more compact style.
+      #
+      # - compact_line: Similar to compact, but wrap each line with
+      #   `{-#LANGUAGE #-}'.
+      #
+      # Default: vertical.
+      style: compact
+      align: false
+      remove_redundant: true
+      language_prefix: LANGUAGE
+
+  - trailing_whitespace: {}
+
+  - squash: {}
+
+indent: 2
+columns: 80
+
+# Sometimes, language extensions are specified in a cabal file or from the
+# command line instead of using language pragmas in the file. stylish-haskell
+# needs to be aware of these, so it can parse the file correctly.
+#
+# No language extensions are enabled by default.
+# language_extensions:
+  # - TemplateHaskell
+  # - QuasiQuotes
