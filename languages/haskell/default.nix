@@ -4,12 +4,14 @@
     pkgs.cabal2nix
     pkgs.cabal-install
     #pkgs.haskell-ci
-    pkgs.haskellPackages.brittany
     pkgs.haskellPackages.haskell-lsp
     pkgs.haskellPackages.haskell-lsp-types
     pkgs.haskellPackages.hpack
     #pkgs.haskellPackages.hpack-convert
     #pkgs.haskellPackages.hpack-dhall
+    pkgs.haskellPackages.stylish-haskell
     pkgs.myHaskellPackages # from config.nix
   ];
+
+  xdg.configFile."stylish-haskell/config.yaml".source = ./stylish-haskell.yaml;
 }

@@ -3,7 +3,7 @@
   imports = [
     ./dhall.nix
     ./erlang.nix
-    ./haskell.nix
+    ./haskell
     ./python.nix
     ./rust.nix
     ./shell.nix
