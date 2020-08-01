@@ -2,7 +2,10 @@
 # are a list, so they have an order, and one specific step may appear more than
 # once (if needed). Each file is processed by these steps in the given order.
 steps:
-  - records: {}
+  - records:
+      equals: "indent 2"
+      first_field: "indent 2"
+
 
   - simple_align:
       cases: false
