@@ -29,6 +29,7 @@
     Plug 'lukerandall/haskellmode-vim', { 'for': 'haskell' }
     Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
     Plug 'Twinside/vim-hoogle', { 'for': 'haskell' }
+    Plug 'alx741/vim-stylishask', { 'for': 'haskell' }
 
     " Idris Plugins
     Plug 'idris-hackers/idris-vim', { 'for': 'idris' }
