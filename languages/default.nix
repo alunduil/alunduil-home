@@ -12,6 +12,7 @@
   home.packages = [
     pkgs.cfssl
     pkgs.gcc
+    pkgs.gitAndTools.pre-commit
     pkgs.gnumake
     pkgs.pijul
     pkgs.skaffold
