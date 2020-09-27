@@ -2,7 +2,8 @@
 {
   home.packages = [
     pkgs.cargo
-    pkgs.rls
     pkgs.rustfmt
   ];
+
+  programs.vim.plugins = [pkgs.vimPlugins.coc-rls];
 }
