@@ -10,7 +10,6 @@
     #pkgs.haskellPackages.hpack-convert
     #pkgs.haskellPackages.hpack-dhall
     pkgs.haskellPackages.stylish-haskell
-    pkgs.myHaskellPackages # from config.nix
   ];
 
   xdg.configFile."stylish-haskell/config.yaml".source = ./stylish-haskell.yaml;
