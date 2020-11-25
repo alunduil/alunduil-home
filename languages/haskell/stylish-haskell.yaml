@@ -5,7 +5,8 @@ steps:
   - records:
       equals: "indent 2"
       first_field: "indent 2"
-
+      field_comment: 1
+      deriving: 2
 
   - simple_align:
       cases: false
