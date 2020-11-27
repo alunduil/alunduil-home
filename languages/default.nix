@@ -3,6 +3,7 @@
   imports = [
     ./dhall.nix
     ./haskell
+    ./python.nix
     ./ruby.nix
     ./rust.nix
     ./shell.nix
@@ -12,5 +13,6 @@
     pkgs.pijul
     pkgs.tig
     pkgs.travis
+    pkgs.pre-commit
   ];
 }
