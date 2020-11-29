@@ -1,13 +1,13 @@
 # Description
 
-Personal [home-manager] Configurations
+Personal [home-manager][home-manager] Configurations
 
-Complete [Nix] configuration for my home directory and user environment that I
+Complete [Nix][nix] configuration for my home directory and user environment that I
 share across all machines.
 
 # Getting Started
 
-For detailed installation instructions for [home-manager] see its README.
+For detailed installation instructions for [home-manager][home-manager] see its README.
 
 Once home-manager is installed, simply setup a link from
 `~/.config/nixpkgs/home.nix` to the `home.nix` file provided by this
@@ -19,12 +19,12 @@ with the corresponding home.nix file accessible at
 
 # Reporting Issues
 
-Any issues discovered should be recorded on [github][issues].  If you believe
+Any issues discovered should be recorded on \[github\]\[issues\].  If you believe
 you've found an improvement or typo, please ensure that it is reported.
 
 If you would like to contribute a fix or new content, please submit a pull
-request.  This project follows [github flow] to make manual review simple.
+request.  This project follows [github flow][github flow] to make manual review simple.
 
-[home-manager]: https://github.com/rycee/home-manager
 [github flow]: https://guides.github.com/introduction/flow/
-[Nix]: https://nixos.org/nixos/manual/
+[home-manager]: https://github.com/rycee/home-manager
+[nix]: https://nixos.org/nixos/manual/

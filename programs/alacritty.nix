@@ -43,7 +43,7 @@
       };
       bell.color = "0xfdf6e3"; # base3
       selection.save_to_clipboard = true;
-      alt_send_esc = true;  # TODO xmonad compatible?
+      alt_send_esc = true; # TODO xmonad compatible?
     };
   };
 }

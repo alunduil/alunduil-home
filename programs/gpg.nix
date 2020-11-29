@@ -18,7 +18,7 @@
 
       Service = {
         ExecStart = "${pkgs.gnupg}/bin/gpg2 --refresh-keys";
-        SuccessExitStatus = [2];
+        SuccessExitStatus = [ 2 ];
       };
     };
 

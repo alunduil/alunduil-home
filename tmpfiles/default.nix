@@ -37,7 +37,7 @@
         };
 
         Install = {
-          WantedBy = ["basic.target"];
+          WantedBy = [ "basic.target" ];
         };
       };
     };
@@ -55,7 +55,7 @@
         };
 
         Install = {
-          WantedBy = ["timers.target"];
+          WantedBy = [ "timers.target" ];
         };
       };
     };

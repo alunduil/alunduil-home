@@ -4,5 +4,5 @@
     pkgs.solargraph
   ];
 
-  programs.vim.plugins = [pkgs.vimPlugins.coc-solargraph];
+  programs.vim.plugins = [ pkgs.vimPlugins.coc-solargraph ];
 }
