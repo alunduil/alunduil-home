@@ -5,5 +5,5 @@
     pkgs.rustfmt
   ];
 
-  programs.vim.plugins = [pkgs.vimPlugins.coc-rls];
+  programs.vim.plugins = [ pkgs.vimPlugins.coc-rls ];
 }

@@ -32,12 +32,14 @@ repos:
       hooks:
           - id: shell-lint
             args: [--format=json]
+            exclude: with$
     - repo: https://github.com/adrienverge/yamllint
       rev: v1.25.0
       hooks:
           - id: yamllint
             args: [--format, parsable, --strict]
             exclude: \.travis\.ya?ml$
+            additional_dependencies: [pyyaml]
     - repo: https://github.com/codespell-project/codespell
       rev: v1.17.1
       hooks:
@@ -55,7 +57,10 @@ repos:
             additional_dependencies:
                 - mdformat-tables
                 - attr
-    - repo: https://github.com/nix-community/nixpkgs-fmt
-      rev: v0.9.0
+    - repo: local
       hooks:
-        - id: nixpkgs-fmt
+          - id: nixpkgs-fmt
+            name: nixpkgs-fmt
+            entry: nixpkgs-fmt
+            language: system
+            types: [nix]

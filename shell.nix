@@ -1,8 +1,8 @@
 let
-  pkgs = import <nixpkgs> {};
+  pkgs = import <nixpkgs> { };
 in
-  pkgs.mkShell {
-    buildInputs = [
-      pkgs.gcc
-    ];
-  }
+pkgs.mkShell {
+  buildInputs = [
+    pkgs.nixpkgs-fmt
+  ];
+}
