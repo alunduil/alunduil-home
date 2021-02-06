@@ -12,6 +12,7 @@
       pkgs.vimPlugins.coc-json
       pkgs.vimPlugins.coc-python
       pkgs.vimPlugins.coc-yaml
+      pkgs.vimPlugins.plantuml-syntax
       pkgs.vimPlugins.vim-airline
       pkgs.vimPlugins.vim-better-whitespace
       pkgs.vimPlugins.vim-colorschemes
