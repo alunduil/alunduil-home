@@ -8,6 +8,7 @@
     ./home-manager.nix
     ./htop.nix
     ./nix-env.nix
+    ./sway.nix
     ./tmux
     ./vim
     ./xmonad

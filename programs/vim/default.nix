@@ -2,6 +2,7 @@
 {
   home.packages = [
     pkgs.nodejs
+    pkgs.yarn
   ];
 
   programs.vim = {
