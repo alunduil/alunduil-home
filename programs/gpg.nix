@@ -4,6 +4,15 @@
     pkgs.gnupg
   ];
 
+  programs.gpg = {
+    enable = true;
+    settings = {
+      emit-version = false;
+      no-comment = true;
+      with-fingerprint = true;
+    };
+  };
+
   services.gpg-agent = {
     enable = true;
     enableSshSupport = true;
