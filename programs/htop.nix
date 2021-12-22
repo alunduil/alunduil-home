@@ -2,7 +2,9 @@
 {
   programs.htop = {
     enable = true;
-    colorScheme = 6; # Broken Gray
-    hideThreads = true;
+    settings = {
+      color_cheme = 6; # Broken Gray
+      hide_threads = true;
+    };
   };
 }
