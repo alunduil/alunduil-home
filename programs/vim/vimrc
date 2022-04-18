@@ -100,7 +100,7 @@
 
 " UI {
     " Set colorscheme to desert
-    colorscheme solarized
+    colorscheme solarized8_light
 
     " Incremental search, highlight matches
     set hlsearch
