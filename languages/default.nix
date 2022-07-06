@@ -4,8 +4,6 @@
     ./dhall.nix
     ./haskell
     ./python.nix
-    ./ruby.nix
-    ./rust.nix
     ./shell.nix
   ];
 

@@ -4,7 +4,7 @@
 
   programs.home-manager = {
     enable = true;
-    path = https://github.com/rycee/home-manager/archive/release-21.11.tar.gz;
+    path = https://github.com/rycee/home-manager/archive/release-22.05.tar.gz;
   };
 
   systemd.user = {
