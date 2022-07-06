@@ -1,13 +1,14 @@
 { pkgs, config, ... }:
 {
   imports = [
-    ./cursor.nix
     ./languages
     ./programs
     ./tmpfiles
   ];
 
   home = {
+    enableNixpkgsReleaseCheck = true;
+
     file = {
       "bin" = {
         recursive = true;
@@ -19,5 +20,7 @@
     sessionVariables = {
       EDITOR = "vim";
     };
+
+    stateVersion = "19.03";
   };
 }

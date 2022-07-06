@@ -1,25 +1,28 @@
 { pkgs, ... }:
 {
   imports = [
-    ./alacritty.nix
-    ./battery.nix
     ./direnv.nix
+    ./git.nix
     ./gpg.nix
     ./home-manager.nix
     ./htop.nix
+    ./man.nix
     ./nix-env.nix
-    ./sway.nix
     ./tmux
     ./vim
-    ./xmonad
     ./zsh
   ];
 
   home.packages = [
     pkgs.file
-    pkgs.irssi
     pkgs.nixops
   ];
 
-  programs.jq.enable = true;
+  programs = {
+    dircolors.enable = true;
+    jq.enable = true;
+    less.enable = true;
+    lesspipe.enable = true;
+    nix-index.enable = true;
+  };
 }
