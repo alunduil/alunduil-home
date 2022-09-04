@@ -8,6 +8,7 @@
     ./htop.nix
     ./man.nix
     ./nix-env.nix
+    ./rclone.nix
     ./tmux
     ./vim
     ./zsh

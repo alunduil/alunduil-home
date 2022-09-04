@@ -17,7 +17,10 @@
 
         Service = {
           ExecStart = "%h/.nix-profile/bin/home-manager switch";
-          Environment = "PATH=\${PATH}:/run/current-system/sw/bin";
+          Environment = [
+            "PATH=\${PATH}:/run/current-system/sw/bin"
+            "NIXPKGS_ALLOW_INSECURE=1"
+          ];
         };
       };
 
