@@ -19,7 +19,7 @@
             "/usr/bin/env mkdir -p %t/%N"
             "/usr/bin/env sudo mount -t zfs ${snapshotName} %t/%N"
           ];
-          ExecStart = "${pkgs.rclone}/bin/rclone sync %t/%N/alunduil Drive:%l.alunduil.com --log-level INFO --log-systemd --fast-list --copy-links --delete-excluded --exclude /.cache/** --exclude /.nix-*/** --exclude /.wine/**";
+          ExecStart = "${pkgs.rclone}/bin/rclone sync %t/%N/alunduil Drive:%l.alunduil.com --stats-log-level NOTICE --stats-one-line --log-systemd --fast-list --copy-links --ignore-errors --delete-excluded --exclude /.cache/** --exclude /.nix-*/** --exclude /.wine/**";
           ExecStopPost = [
             "-/usr/bin/env sudo umount %t/%N"
             "/usr/bin/env sudo zfs destroy -r ${snapshotName}"
